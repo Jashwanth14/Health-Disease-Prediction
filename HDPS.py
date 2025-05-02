@@ -120,7 +120,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.write("Welcome to the Health Disease Prediction System. Please click the start prediction to begin the tasks!")
+st.write("Welcome to the Health Disease Prediction System. Please click the start prediction to begin the task!")
 
 # Check if the "Start Prediction" button has been clicked
 if 'prediction_started' not in st.session_state:
@@ -132,9 +132,10 @@ if not st.session_state['prediction_started']:
         st.session_state['prediction_started'] = True
 
 # Load the saved models
-diabetes_model = pickle.load(open("C:\\Users\\DELL\\Desktop\\Academics\\Sem-2\\MDPS\\models\\diabetes_model.sav", 'rb'))
-heart_disease_model = pickle.load(open("C:\\Users\\DELL\\Desktop\\Academics\\Sem-2\\MDPS\\models\\heart_disease_model.sav",'rb'))
-parkinsons_model = pickle.load(open("C:\\Users\\DELL\\Desktop\\Academics\\Sem-2\\MDPS\\models\\parkinsons_model.sav", 'rb'))
+diabetes_model = pickle.load(open("diabetes_model.sav", 'rb'))
+
+heart_disease_model = pickle.load(open("C:\\Users\\DELL\\Desktop\\Academics\\Sem-2\\MDPS\\heart_disease_model.sav",'rb'))
+parkinsons_model = pickle.load(open("C:\\Users\\DELL\\Desktop\\Academics\\Sem-2\\MDPS\\parkinsons_model.sav", 'rb'))
 
 # If "Start Prediction" button has been clicked, show disease prediction options
 if st.session_state['prediction_started']:
